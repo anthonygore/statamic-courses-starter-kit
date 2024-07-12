@@ -2,7 +2,7 @@
     "name": "anthonygore/courses-starter-kit",
     "extra": {
         "statamic": {
-            "name": "Statamic Courses Starter Kit",
+            "name": "Statamic Courses - Starter Kit",
             "description": "Starter Kit for Statamic Courses"
         }
     }
