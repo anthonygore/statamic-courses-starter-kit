@@ -16,10 +16,10 @@
                 <div>
                     {{ if {user} }}
                         {{  user }}
-                            <a class="text-white bg-blue-400 btn-sm" href="{{ user:logout_url }}">Log out</a>
+                            <a class="text-white bg-blue-400 text-sm px-4 py-2 rounded font-bold cursor-pointer" href="{{ user:logout_url }}">Log out</a>
                         {{ /user }}
                     {{ else }}
-                        <a class="bg-transparent border-blue-500 border-2 text-blue-500 btn-sm" href="/login">Log In</a>
+                        <a class="bg-transparent border-blue-500 border-2 text-blue-500 text-sm px-4 py-2 rounded font-bold cursor-pointer" href="/login">Log In</a>
                     {{ /if }}
                 </div>
             </div>
