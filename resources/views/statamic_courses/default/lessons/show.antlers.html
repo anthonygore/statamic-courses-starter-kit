@@ -1,0 +1,36 @@
+<p class="text-yellow-900 mb-8 text-lg">
+    {{ course }}
+        <a class="underline" href="{{ permalink }}">{{ title }}</a>
+    {{ /course }}
+    <span class="px-3">></span>
+    <span class="font-bold">{{ title }}</span>
+</p>
+<div>
+        {{ if {course_info:is_enrolled id="{{ course:id }}"} }}
+
+            {{ if {content} }}
+                <article class="prose">
+                    {{ content }}
+                </article>
+                <div class="pt-8">
+                    <form action="/complete_lesson/{{ id }}" method="GET">
+                        <button class="bg-yellow-600 rounded py-2 px-4 text-white font-bold" type="submit">Complete and continue</button>
+                    </form>
+                </div>
+            {{ else }}
+                {{ partial:statamic_courses/default/partials/tip }}
+                    Add some content to your lesson in the <a class="underline text-yellow-900" href="/cp/collections/lessons/entries/{{ id }}">control panel</a>.
+                {{ /partial:statamic_courses/default/partials/tip }}
+            {{ /if }}
+
+        {{ else }}
+
+            {{ if {user} }}
+                <p>You'll need to <a href="" class="underline text-yellow-900">enroll</a> in this course to see this lesson.</p>
+            {{ else }}
+                <p>Please <a href="{{ permalink }}" class="underline text-yellow-900">enroll</a> or <a href="/login" class="underline text-yellow-900">log in</a> to see this lesson.</p>
+            {{ /if }}
+
+        {{ /if }}
+
+</div>

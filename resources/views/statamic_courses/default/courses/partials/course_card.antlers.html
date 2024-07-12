@@ -1,0 +1,9 @@
+{{ partial:statamic_courses/default/partials/card href="{{ href }}" thumbnail_url="{{ thumbnail_url }}" checked="{{ enrolled }}" checked_title="Enrolled" title="{{ title }}" description="{{ description }}" }}
+    <button class="btn-sm mt-6 text-yellow-600 border-2 border-yellow-600 bg-transparent">
+        {{ if {enrolled} }}
+            <span>Get started</span>
+        {{ else }}
+            <span>Learn more</span>
+        {{ /if }}
+    </button>
+{{ /partial:statamic_courses/default/partials/card }}

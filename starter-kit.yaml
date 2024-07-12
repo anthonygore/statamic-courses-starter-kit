@@ -1,0 +1,8 @@
+export_paths:
+  - content
+  - resources/blueprints
+  - resources/css/site.css
+  - resources/views
+  - tailwind.config.js
+dependencies:
+  anthonygore/courses: dev-main

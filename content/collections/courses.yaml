@@ -1,0 +1,18 @@
+title: Courses
+template: statamic_courses/default/courses/show
+layout: layout
+mount: 30410187-ec8a-4afd-a388-064f4fad06c2
+revisions: false
+route: '/courses/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+structure:
+  root: false

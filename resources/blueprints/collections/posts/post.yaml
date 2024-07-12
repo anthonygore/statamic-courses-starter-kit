@@ -1,0 +1,98 @@
+title: Post
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: excerpt
+            field:
+              type: textarea
+              display: Excerpt
+          -
+            handle: content
+            field:
+              save_html: true
+              remove_empty_nodes: false
+              type: bard
+              display: Content
+              container: assets
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - codeblock
+                - code
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: seo_title
+            field:
+              type: text
+              display: 'SEO Title'
+          -
+            handle: seo_description
+            field:
+              type: textarea
+              display: 'SEO Description'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+          -
+            handle: featured_media
+            field:
+              max_files: 1
+              mode: grid
+              container: assets
+              type: assets
+              display: 'Featured Media'
+          -
+            handle: categories
+            field:
+              type: taggable
+              display: Categories
+          -
+            handle: tags
+            field:
+              type: taggable
+              display: Tags
+          -
+            handle: coauthors
+            field:
+              type: taggable
+              display: Coauthors

@@ -1,0 +1,12 @@
+<div>
+    {{ if {session:error} }}
+        {{ partial:statamic_courses/default/partials/alert type="error" }}
+            {{ session:error }}
+        {{ /partial:statamic_courses/default/partials/alert }}
+    {{ /if }}
+    {{ if {session:success} }}
+        {{ partial:statamic_courses/default/partials/alert type="success" }}
+            {{ session:success }}
+        {{ /partial:statamic_courses/default/partials/alert }}
+    {{ /if }}
+</div>

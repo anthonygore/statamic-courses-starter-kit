@@ -1,0 +1,28 @@
+<nav class="border-b-2 border-yellow-600 fixed z-50 w-full bg-yellow-50">
+    <div class="container mx-auto">
+        <div class="px-6 sm:px-12">
+            <div class="flex justify-between py-4 items-center">
+                <div class="flex space-x-8">
+                    <a href="/" class="flex items-center">
+                        <!--<img src="logo.png" alt="Logo" class="h-8 w-8 mr-2 bg-gray-50" />-->
+                        <span class="font-bold text-slate-700 py-2">Home</span>
+                    </a>
+                    <div class="hidden md:flex space-x-7 text-yellow-600 font-bold">
+                        <a href="/courses" class="py-2">
+                            Courses
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    {{ if {user} }}
+                        {{  user }}
+                            <a class="text-white bg-blue-400 btn-sm" href="{{ user:logout_url }}">Log out</a>
+                        {{ /user }}
+                    {{ else }}
+                        <a class="bg-transparent border-blue-500 border-2 text-blue-500 btn-sm" href="/login">Log In</a>
+                    {{ /if }}
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,35 @@
+<h1 class="text-3xl mb-8 font-bold text-yellow-900">{{ title }}</h1>
+
+<article class="prose pb-8">{{ content }}</article>
+
+{{ if {lessons} }}
+    {{ if {course_info:is_enrolled id="{{ id }}"} }}
+        <div class="flex flex-row flex-wrap items-center">
+            <div>
+                <a href="{{ course_info:next_lesson_url id="{{ id }}" }}" class="inline-block bg-yellow-600 text-white btn-lg mb-6">
+                    {{ if {course_info:progress id="{{ id }}"} === 0 }}
+                        <span>Get started</span>
+                    {{ else }}
+                        <span>Continue with lesson {{ course_info:next_lesson_rank id="{{ id }}" }}</span>
+                    {{ /if }}
+                </a>
+            </div>
+        </div>
+    {{ else }}
+        <form action="/enroll/{{ id }}" method="GET">
+            <button class="inline-block my-6 btn-lg bg-yellow-600 text-white" type="submit">Enroll now</button>
+        </form>
+    {{ /if }}
+
+    <h2 class="mt-6 text-yellow-900 text-2xl font-bold">Lessons</h2>
+
+    <div class="mt-6 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+        {{ lessons }}
+            {{ partial:statamic_courses/default/courses/partials/lesson_card href="{{ permalink }}" thumbnail_url="{{ thumbnail_url }}" complete="{{ lesson_info:is_completed id='{{ id }}' }}" title="{{ title }}" description="{{ description }}" }}
+        {{ /lessons }}
+    </div>
+{{ else }}
+    {{ partial:statamic_courses/default/partials/tip }}
+        Add some lessons to your course in the <a class="underline text-yellow-900" href="/cp/collections/courses/entries/{{ id }}">control panel</a>.
+    {{ /partial:statamic_courses/default/partials/tip }}
+{{ /if }}
