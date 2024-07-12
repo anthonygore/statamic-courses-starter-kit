@@ -1,6 +1,6 @@
 title: Lessons
-template: statamic_courses/default/lessons/show
-layout: layout
+template: courses/default/lessons/show
+layout: courses/default/layout
 revisions: false
 route: '/lessons/{slug}'
 date: true

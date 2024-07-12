@@ -4,6 +4,6 @@
 
 <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
     {{ collection from="courses" }}
-        {{ partial:statamic_courses/default/courses/partials/course_card href="{{ url }}" thumbnail_url="{{ thumbnail_url }}" enrolled="{{ course_info:is_enrolled id='{{ id }}' }}" title="{{ title }}" description="{{ description }}" }}
+        {{ partial:courses/default/courses/partials/course_card href="{{ url }}" thumbnail_url="{{ thumbnail_url }}" enrolled="{{ course_info:is_enrolled id='{{ id }}' }}" title="{{ title }}" description="{{ description }}" }}
     {{ /collection }}
 </div>

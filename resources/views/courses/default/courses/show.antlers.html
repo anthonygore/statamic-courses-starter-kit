@@ -25,11 +25,11 @@
 
     <div class="mt-6 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
         {{ lessons }}
-            {{ partial:statamic_courses/default/courses/partials/lesson_card href="{{ permalink }}" thumbnail_url="{{ thumbnail_url }}" complete="{{ lesson_info:is_completed id='{{ id }}' }}" title="{{ title }}" description="{{ description }}" }}
+            {{ partial:courses/default/courses/partials/lesson_card href="{{ permalink }}" thumbnail_url="{{ thumbnail_url }}" complete="{{ lesson_info:is_completed id='{{ id }}' }}" title="{{ title }}" description="{{ description }}" }}
         {{ /lessons }}
     </div>
 {{ else }}
-    {{ partial:statamic_courses/default/partials/tip }}
+    {{ partial:courses/default/partials/tip }}
         Add some lessons to your course in the <a class="underline text-yellow-900" href="/cp/collections/courses/entries/{{ id }}">control panel</a>.
-    {{ /partial:statamic_courses/default/partials/tip }}
+    {{ /partial:courses/default/partials/tip }}
 {{ /if }}

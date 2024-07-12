@@ -18,19 +18,19 @@
                     </form>
                 </div>
             {{ else }}
-                {{ partial:statamic_courses/default/partials/tip }}
+                {{ partial:courses/default/partials/tip }}
                     Add some content to your lesson in the <a class="underline text-yellow-900" href="/cp/collections/lessons/entries/{{ id }}">control panel</a>.
-                {{ /partial:statamic_courses/default/partials/tip }}
+                {{ /partial:courses/default/partials/tip }}
             {{ /if }}
 
         {{ else }}
-
-            {{ if {user} }}
-                <p>You'll need to <a href="" class="underline text-yellow-900">enroll</a> in this course to see this lesson.</p>
-            {{ else }}
-                <p>Please <a href="{{ permalink }}" class="underline text-yellow-900">enroll</a> or <a href="/login" class="underline text-yellow-900">log in</a> to see this lesson.</p>
-            {{ /if }}
-
+            {{ course }}
+                {{ if {user} }}
+                    <p>You'll need to <a href="{{ permalink }}" class="underline text-yellow-900">enroll</a> in this course to see this lesson.</p>
+                {{ else }}
+                    <p>Please <a href="{{ permalink }}" class="underline text-yellow-900">enroll</a> or <a href="/login" class="underline text-yellow-900">log in</a> to see this lesson.</p>
+                {{ /if }}
+            {{ /course }}
         {{ /if }}
 
 </div>

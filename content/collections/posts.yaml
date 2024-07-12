@@ -1,6 +1,6 @@
 title: Posts
 template: default
-layout: layout
+layout: courses/default/layout
 revisions: false
 route: '/posts/{slug}'
 date: true

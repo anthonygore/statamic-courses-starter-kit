@@ -1,0 +1,21 @@
+<div class="pb-8">
+    Need an account? <a href="/register" class="underline text-yellow-900">Register here</a>.
+</div>
+
+<div class="w-full max-w-sm">
+    {{ user:login_form redirect="{{ {session:has key='redirect_url'} ? {session:redirect_url} : '/courses' }}" }}
+
+        {{ partial:courses/default/auth/partials/form_feedback }}
+
+        {{ partial:courses/default/auth/partials/form_input type="email" id="email" name="email" value="{{ old:email }}" title="Email" }}
+
+        {{ partial:courses/default/auth/partials/form_input type="password" id="password" name="password" value="{{ old:password }}" title="Password" }}
+
+        {{ partial:courses/default/auth/partials/form_submit title="Log in" }}
+
+    {{ /user:login_form }}
+</div>
+
+<div>
+    <a class="underline text-yellow-900" href="/password/reset">Forgot password</a>
+</div>

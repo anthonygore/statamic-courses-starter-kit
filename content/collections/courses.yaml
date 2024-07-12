@@ -1,6 +1,6 @@
 title: Courses
-template: statamic_courses/default/courses/show
-layout: layout
+template: courses/default/courses/show
+layout: courses/default/layout
 mount: 30410187-ec8a-4afd-a388-064f4fad06c2
 revisions: false
 route: '/courses/{slug}'
