@@ -3,8 +3,10 @@ export_paths:
   - content/trees
   - resources/blueprints/collections
   - resources/blueprints/user.yaml
-  - resources/views/courses
+  - resources/views
   - tailwind.config.js
   - users/instructor@courses.com.yaml
+  - routes/web.php
+  - app/Http/Controllers/CourseController.php
 dependencies:
   anthonygore/courses: dev-main
