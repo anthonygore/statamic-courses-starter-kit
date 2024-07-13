@@ -1,6 +1,5 @@
 title: Pages
-structure:
-  root: true
+structure: false
 route: '{parent_uri}/{slug}'
 propagate: true
 layout: courses/default/layout
