@@ -1,5 +1,5 @@
 {
-    "name": "anthonygore/courses-starter-kit",
+    "name": "anthonygore/statamic-courses-starter-kit",
     "extra": {
         "statamic": {
             "name": "Courses Starter Kit",
